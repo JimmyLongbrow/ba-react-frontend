@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import FlightSearch from './components/FlightSearch'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <FlightSearch />
   </React.StrictMode>,
   document.getElementById('root')
 );
