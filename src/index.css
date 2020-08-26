@@ -41,3 +41,7 @@ code {
   background-color: #4CAF50;
   color: white;
 }
+
+hr {
+  border: 1px solid red;
+}
