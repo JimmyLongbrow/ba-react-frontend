@@ -3,6 +3,7 @@ import SearchForm from './SearchForm'
 import SearchResults from './SearchResults'
 import {Route, Link, HashRouter as Router} from 'react-router-dom';
 import axios from 'axios'
+import ShowSeatArrangements from './ShowSeatArrangements'
 const AIRPLANES_URL = 'http://localhost:3000/airplanes'
 
 class ShowPlane extends React.Component {
@@ -12,8 +13,11 @@ class ShowPlane extends React.Component {
     super(props, context)
     this.state = {
       airplanes: [],
-       id: this.props.match.params.id
-
+       id: this.props.match.params.id,
+       seats:[],
+       error: null,
+       seatrow:0,
+       seatcolumn: 0
     };
   }
 
@@ -29,7 +33,6 @@ class ShowPlane extends React.Component {
 
   componentDidMount(){
 
-
   this.getAirPlanes();
 
   } // componentDidMount()
@@ -42,9 +45,10 @@ class ShowPlane extends React.Component {
 if(item == null ) return null;
  { return(
     <div>
-<h1> <stong>Airplane Details:</stong></h1>
+<h1> <strong>Airplane Details:</strong></h1>
           <li key={item.id}><strong>Id:</strong> {item.id} | <strong>Flight number:</strong> {item.name}| <strong>Row:</strong> {item.row} |<strong> Column:</strong> {item.column}
           </li>
+<ShowSeatArrangements flightitem={item}/>
             </div>
 )}
 

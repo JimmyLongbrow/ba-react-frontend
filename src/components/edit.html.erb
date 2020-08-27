@@ -1,0 +1,12 @@
+<h2>
+  Edit
+  <%= @property.name %>
+</h2>
+<%= render 'form' do |f|%>
+  <% @property.photos.each do |p|%>
+    <%= check_box_tag 'photo_id[]', p.id, true %>
+    <%= cl_image_tag p.image, class: 'edit_thumb', crop: 'fill', width: 100 %>
+    <br>
+    <br>
+  <% end %>
+<% end %>
