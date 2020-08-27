@@ -6,7 +6,7 @@ import FlightSearch from './components/FlightSearch'
 
 ReactDOM.render(
   <React.StrictMode>
-    <FlightSearch />
+    <FlightSearch/>
   </React.StrictMode>,
   document.getElementById('root')
 );
